@@ -1,0 +1,83 @@
+public class Main {
+
+	public static void main(String[] args) {
+		Woman W = new Woman();
+		
+		
+		for (int i = W.age; i<W.ageOfMeno; i++)
+		{
+			W.changeProb();
+			W.isMommyDead();
+			if(W.isDead)
+			{
+				break;
+			}
+			else if(W.gotPregers())
+			{
+				if(W.singleO)
+				{
+					Child C = new Child();
+					int foetusAge = 0;
+					while(W.isPrego)
+					{
+						W.isMommyDead();
+						C.isChildDead();
+						if (foetusAge < 8)
+						{
+							W.childBirth();
+							C.childBirth();
+						}
+						if(W.isDead)
+							break;
+						else if (C.isDead)
+							break;
+						
+						foetusAge++;
+						i++;
+						W.changeProb();
+						}
+					}
+				else
+				{
+					Child C1 = new Child();
+					Child C2 = new Child();
+					int foetusAge = 0;
+					while(W.isPrego)
+					{
+						W.isMommyDead();
+						if (C1.isDead && C2.isDead)
+						{
+							break;
+						}
+						else if(C1.isDead)
+						{
+							C2.isChildDead();
+						}
+						else if (C2.isDead)
+						{
+							C1.isChildDead();
+						}
+						else
+						{
+							C1.isChildDead();
+							C2.isChildDead();
+						}
+						
+						if (foetusAge < 8)
+							W.childBirth();
+						if(W.isDead)
+							break;
+						else if (C1.isDead && C2.isDead)
+							break;
+						
+						foetusAge++;
+						i++;
+						W.changeProb();
+					}
+				}
+			}
+		}
+
+	}
+
+}
