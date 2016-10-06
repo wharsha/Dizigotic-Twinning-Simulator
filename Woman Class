@@ -95,7 +95,6 @@ public class Woman {
 		
 	}
 	
-	//Why is Wade so confusing
 	public void changeProb()
 	{
 		
@@ -104,7 +103,5 @@ public class Woman {
 	public boolean singleO()
 	{
 		return true;
-	}
-	//this is a test change
-	
+	}	
 }
