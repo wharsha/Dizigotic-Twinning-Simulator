@@ -1,0 +1,109 @@
+import java.util.Random;
+
+//This is the class objectifying women.
+//It will show the amount of children the mother 
+//raises and the statistics surrounding that.
+public class Woman {
+	Random rand = new Random();
+	int age;
+	int numKids;
+	double pSOvu;
+	double pDOvu;
+	double pLb;
+	double pSb;
+	int numDead;
+	int numLive;
+	double momNatDeath;
+	double momBirthDeath;
+	int ageOfMeno;
+	boolean isPrego;
+	boolean isDead;
+	boolean singleO;
+	boolean doubleO;
+	
+	public Woman()
+			{
+			age = 180;
+			numKids = 0;
+			pSOvu = 1;
+			pDOvu = 0;
+			pLb = 0; //need values from bio squad
+			pSb = 1-pLb;
+			ageOfMeno = 600;
+			isPrego = false;
+			isDead = false;
+			}
+	
+	//used to track time in months, might switch for nested loops idk
+	public void Timer ()
+	{
+		
+	}
+
+	//tells if mother has died of natural causes
+	public void isMommyDead()
+	{
+		int rn = rand.nextInt(10000);
+		if (rn<25)
+			isDead=true;
+	}
+	
+	//checks if mom dies during single birth;
+	public void isMommyDeadS(int BP)
+	{
+		int rn = rand.nextInt(1000)+1;
+		if (rn<BP)
+		isDead = true;
+		
+	
+	}
+	
+	//checks if moms dies during twin birth
+	public void isMommyDeadD(int BP)
+	{
+		int rn = rand.nextInt(1000)+1;
+		if(rn<BP)
+			isDead=true;
+	
+	}
+	
+	//this method runs childbirth and the chance of the mother or child dying
+	public void childBirth()
+	{
+		isPrego = false;
+		if (singleO)
+			isMommyDeadS(8);
+		else
+			isMommyDeadD(33);
+		
+		
+	}
+	
+	//add chance of prob of single and double ovulation into the
+	//method as well as trying to add a child 
+	public boolean gotPregers()
+	{
+		int test = rand.nextInt(100) + 1;
+		
+		if (test <30)
+			{
+			isPrego = true;
+			return true;
+			}
+		else
+			return false;
+		
+	}
+	
+	
+	public void changeProb()
+	{
+		
+	}
+	//need to change to void and make one for doubleO when we get the data
+	public boolean singleO()
+	{
+		return true;
+	}
+	
+}
