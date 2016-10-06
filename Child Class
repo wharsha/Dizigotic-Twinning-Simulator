@@ -1,8 +1,12 @@
+import java.util.Random;
+
 public class Child {
 int age;
 double pOfDeath;
 int endChild;
 boolean isDead;
+
+Random rand = new Random();
 
 public Child()
 {
@@ -11,14 +15,37 @@ public Child()
 	endChild = 0;
 }
 
+//Checks monthly whether the child dies
+//There are different mortality rates for different age groups
 public void isChildDead()
 {
+	int rn = rand.nextInt(1000) + 1;
+	if (age > 12 && age < 48)
+	{
+		if (rn < 160)
+			isDead = true;
+		else 
+			isDead = false;
+	}
 	
+	else if (age > 48 && age < 180)
+	{
+		if (rn < 13)
+			isDead = true;
+		else
+			isDead = false;
+	}
 }
 
+//Checks if the child survied the birthing process
+//Changes isDead if the child dies
 public void childBirth()
 {
-	
+	int rn = rand.nextInt(100) + 1;
+	if (rn < 20)
+		isDead = true;
+	else
+		isDead = false;
 }
 
 
