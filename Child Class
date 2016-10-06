@@ -1,0 +1,25 @@
+public class Child {
+int age;
+double pOfDeath;
+int endChild;
+boolean isDead;
+
+public Child()
+{
+	age = 0;
+	pOfDeath = 0;
+	endChild = 0;
+}
+
+public void isChildDead()
+{
+	
+}
+
+public void childBirth()
+{
+	
+}
+
+
+}
